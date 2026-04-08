@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>D1N0 — Coming soon</title>
+<meta name="description" content="D1N0, a robot from Unconventional Minds. Coming soon." />
+<link rel="stylesheet" href="assets/fonts/WEB/css/chillax.css" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: 'Chillax', system-ui, sans-serif;
+    font-weight: 300;
+    color: #F2ECE7;
+    background: #0a0a0a;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  .stage {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('assets/img/26-04-07 D1N0 - Teaser - 02.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+  .copy {
+    position: absolute;
+    top: 50%;
+    left: clamp(1.5rem, 6vw, 6rem);
+    transform: translateY(-50%);
+    max-width: 90%;
+    animation: fadeUp 1.4s ease-out both;
+  }
+  h1 {
+    font-family: 'Chillax', sans-serif;
+    font-weight: 300;
+    font-size: clamp(2.6rem, 7vw, 5.5rem);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: #F2ECE7;
+    margin-bottom: 0.9rem;
+  }
+  .sub {
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    font-weight: 300;
+    line-height: 1.45;
+    color: #C9B89F;
+    opacity: 0.95;
+    margin-bottom: 1.4rem;
+  }
+  form.waitlist {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(242,236,231,0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 0.35rem 0.35rem 0.35rem 1.1rem;
+    border-radius: 999px;
+    max-width: 420px;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+  form.waitlist:focus-within {
+    border-color: #7FCBA5;
+    background: rgba(255,255,255,0.09);
+  }
+  form.waitlist input[type="email"] {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 0.7rem 0;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #F2ECE7;
+    outline: none;
+    min-width: 0;
+  }
+  form.waitlist input[type="email"]::placeholder {
+    color: rgba(242,236,231,0.45);
+    font-style: italic;
+  }
+  form.waitlist button {
+    border: none;
+    background: #7FCBA5;
+    color: #0a0a0a;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  form.waitlist button:hover { background: #6BBF95; transform: translateY(-1px); }
+  .footer {
+    position: absolute;
+    right: clamp(1.5rem, 4vw, 3rem);
+    bottom: clamp(1rem, 3vh, 2rem);
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: rgba(242,236,231,0.7);
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(calc(-50% + 18px)); }
+    to   { opacity: 1; transform: translateY(-50%); }
+  }
+  @media (max-width: 600px) {
+    .copy { width: calc(100% - 3rem); }
+    .footer { left: 1.5rem; right: 1.5rem; text-align: right; }
+  }
+</style>
+</head>
+<body>
+  <main class="stage">
+    <div class="copy">
+      <h1>coming soon</h1>
+      <p class="sub">
+        Do you want to meet D1N0?<br/>
+        Join the waiting list
+      </p>
+      <form class="waitlist"
+            action="https://formsubmit.co/paolo@unconventionalminds.it"
+            method="POST">
+        <input type="email" name="email" required placeholder="your email" aria-label="Email" />
+        <button type="submit">Join</button>
+        <input type="hidden" name="_subject" value="New D1N0 waitlist signup" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style="display:none" />
+      </form>
+    </div>
+    <div class="footer">A robot from Unconventional Minds</div>
+  </main>
+</body>
+</html>
